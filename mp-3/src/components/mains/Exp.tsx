@@ -10,6 +10,13 @@ export default function Exp() {
       justify-content: center;
       padding:10px;
 
+      img {
+        width: 500px; 
+        height: auto;
+        margin-left: auto;
+        padding: 10px;
+      }
+
       @media screen and (max-width: 1000px) {
         width: 100%;
         height: 100%;
@@ -42,6 +49,11 @@ export default function Exp() {
       height: auto;
       margin-left: auto;
       padding: 10px;
+      @media screen and (max-width: 1000px) {
+        margin:0;
+        width: 100%;
+        max-width: 250px;
+      }
     `
   return (
     <StyledMain>
