@@ -2,80 +2,80 @@ import { useState } from 'react'
 import styled from 'styled-components';
 import wow from './src/wow.png';
 
-const StyledMain = styled.main
-  `
-      height: 100%;
-      width: 70%;
+const StyledMain = styled.main   // moved styled components outside of the function since input box re-rendered every time a character or number was inputted
+  `                              
+    height: 100%;
+    width: 70%;
+    justify-content: center;
+    padding:10px;
+
+    @media screen and (max-width: 1000px) {
+      width: 100%;
+    }
+    p {
+      margin: 5px;
+    }
+
+    h2 {
+      padding: 10px;
+    }
+
+    h3 {
+      margin-top: 2vh;
+      margin-bottom: 2vh;
+    }
+
+    img {
       justify-content: center;
-      padding:10px;
-
-      @media screen and (max-width: 1000px) {
-        width: 100%;
-      }
-      p {
-        margin: 5px;
-      }
-
-      h2 {
-        padding: 10px;
-      }
-
-      h3 {
-        margin-top: 2vh;
-        margin-bottom: 2vh;
-      }
-
-      img {
-        justify-content: center;
-        max-width: 100%;
-        height: auto;
-      }
-    `;
+      max-width: 100%;
+      height: auto;
+    }
+  `;
 
 const StyledCalc = styled.div
   `
-      width: 400px;
-      margin: 20px auto;
-      padding: 20px;
-      border: 2px solid black;
-      border-radius: 10px;
-      background-color: white;
-    `;
+    width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+  `;
 
 const StyledButton = styled.button
   `
-      width: 50px;
-      font-weight: bold;
-      height: 50px;
-      margin-top: 2vh;
-      margin-left: 0.5vw;
-      margin-right: 0.5vw;
-      border-radius: 50%;
-      border: 1px solid black;
-      background-color: white;
-    `;
+    width: 50px;
+    font-weight: bold;
+    height: 50px;
+    margin-top: 2vh;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    border-radius: 50%;
+    border: 1px solid black;
+    background-color: white;
+  `;
 
 const StyledOutput = styled.p < { isNegative: boolean } >
   `
-      color: ${(props) => (props.isNegative ? 'red' : 'black')};
-      font-size: 20px;
-      font-family: Arial, sans-serif;
-      font-weight: bold;
-      border: 1px solid black;
-      padding: 5px;
-      text-align: center;
-      margin: 10px auto;
-      background-color: white;
-      height: 35px;
-      width: 275px;
-    `;
+    color: ${(props) => (props.isNegative ? 'red' : 'black')};  //boolean value to set number to red if negative and black if positive
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    margin: 10px auto;
+    background-color: white;
+    height: 35px;
+    width: 275px;
+  `;
 
 const StyledDiv = styled.div
   `
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    `;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  `;
 
 const StyledInput = styled.input
   `
@@ -87,7 +87,7 @@ const StyledInput = styled.input
       text-align: center;
     `;
 
-export function useCalc() {
+export function useCalc() { // handles mathematical functions as well as uses useState to to update values 
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
   const [output, setOutput] = useState('');
@@ -100,7 +100,7 @@ export function useCalc() {
     const base = Number(num1);
     const exp = Number(num2);
     let res = 1;
-    if (exp >= 0) {
+    if (exp >= 0) { //if else statement to handle positive/negative exponents in the power function
       for (let i = 0; i < exp; i++) res *= base;
       setOutput(String(res));
     } else {
