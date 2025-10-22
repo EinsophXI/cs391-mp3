@@ -28,7 +28,7 @@ export default function Nav() {
         flex-direction: row;
         justify-content: center;
         width: 100%;
-        font-size: 12px;
+        font-size: calc(2px + 2vw);
       }
     `
 

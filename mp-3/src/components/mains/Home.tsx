@@ -4,20 +4,19 @@ import styled from "styled-components";
 export default function Home() {
   const StyledMain = styled.main
     `
-      height: 100vh; 
+      height: 100%; 
       width: 70%;
       justify-content: center;
       padding:10px;
 
       @media screen and (max-width: 1000px) {
         width: 100%;
-        height: 100%;
       }
     `;
 
   const StyledDiv = styled.div
     `
-      font-size: 25px;
+      font-size: calc( 15px + 1vw);
       display: flex;
       flex-direction: row;
       text-align: left;
@@ -31,7 +30,7 @@ export default function Home() {
 
   const StyledP = styled.p
     `
-      font-size: 25px;
+      font-size: calc( 15px + 1vw);
       display: flex;
       flex-direction: row;
       text-align: left;
@@ -45,6 +44,10 @@ export default function Home() {
       margin: 2.5%;
       max-width: 35%;
       height: auto;
+      @media screen and (max-width:1000px) {
+        max-width: 55%;
+        height: auto;
+      }
     `;
 
   return (
