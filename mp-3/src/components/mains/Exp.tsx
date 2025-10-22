@@ -41,6 +41,10 @@ export default function Exp() {
       width: 100%;
       margin-bottom: 10px;
       padding: 10px;
+      @media screen and (max-width: 1000px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
     `
 
   const StyledImg = styled.img
@@ -49,10 +53,10 @@ export default function Exp() {
       height: auto;
       margin-left: auto;
       padding: 10px;
-      @media screen and (max-width: 1000px) {
+      @media screen and (max-width: 1500px) {
         margin:0;
         width: 100%;
-        max-width: 250px;
+        max-width: 200px;
       }
     `
   return (

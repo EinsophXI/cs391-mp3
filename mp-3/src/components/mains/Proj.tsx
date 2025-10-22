@@ -40,6 +40,9 @@ const StyledCalc = styled.div
     border: 2px solid black;
     border-radius: 10px;
     background-color: white;
+    @media screen and (max-width: 1000px) {
+      max-width: 300px;
+    }
   `;
 
 const StyledButton = styled.button
@@ -53,6 +56,9 @@ const StyledButton = styled.button
     border-radius: 50%;
     border: 1px solid black;
     background-color: white;
+    @media screen and (max-width: 1000px) {
+
+    }
   `;
 
 const StyledOutput = styled.p < { isNegative: boolean } >
@@ -85,9 +91,12 @@ const StyledInput = styled.input
       border: 1px solid black;
       padding: 5px;
       text-align: center;
+      @media screen and (max-width: 1000px) {
+        width: 246px;
+      }
     `;
 
-export function useCalc() { // handles mathematical functions as well as uses useState to to update values 
+export function useCalc() { // handles mathematical functions as well as uses useState to to set/update values 
   const [num1, setNum1] = useState('');
   const [num2, setNum2] = useState('');
   const [output, setOutput] = useState('');
